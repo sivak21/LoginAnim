@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Login Form</title></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style> 
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    *    
+   {
+    margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family:'poppins' sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100hv;
+        background:#23242a;
+        padding-top:150px;
+        flex-direction: column;
+    }
+    #box{
+        position: relative;
+        width: 380px;
+        height: 420px;
+        background:#1c1c1c;
+        border-radius: 8px;
+        overflow: hidden;
+
+        
+        
+    }
+    #box:before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg,transparent,#e82e7a,#c70486);
+        animation: animate 6s linear infinite;
+        transform-origin: bottom right;
+        z-index: 1;
+    }
+    
+     #box:after{
+        content: '';
+        position: absolute;
+        top: -50%;
+         z-index: 1;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg,transparent,#e82e7a,#e82e7a);
+        animation: animate 6s linear infinite;
+        transform-origin: bottom right;
+         animation-delay: -3s;
+    }
+    @keyframes animate{
+        0%{
+         transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    form{
+        position: absolute;
+        z-index: 2;
+        border-radius: 8px;
+        background: #28292d;
+        inset: 2px;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 40px;
+    
+    }
+    h2{
+       color:#e82e7a;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+    .inputbox{
+        position: relative;
+        width: 300px;
+        margin-top: 35PX;
+    }
+    .inputbox input{
+        position: relative;
+        width: 100%;
+        padding: 20px 10px 10px;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        color: #23242a;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        z-index: 10;
+    }
+    .inputbox span{
+        position: absolute;
+        left:0;
+        padding: 20px 0px 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color: gray;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        
+    }
+    .inputbox input:valid ~ span,
+    .inputbox input:focus ~ span
+    {
+        color:#e82e7a;
+        transform: translateX(0px) translateY(-34px);
+        font-size: 0.75em;
+    }
+    .inputbox i{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: #e82e7a;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: 0.5s;
+        pointer-events: none;
+        z-index: 9;
+    }
+     .inputbox input:valid ~ i,
+    .inputbox input:focus ~ i{
+        height: 44px;
+    }
+    .link{
+        display: flex;
+        justify-content:space-between;
+    }
+    .link a{
+        margin: 10px 0;
+        font-size: 0.75em;
+        color:gray;
+        text-decoration: beige;
+        padding: 15px;
+    }
+    .link a:hover,
+    .link a:nth-child(2){
+     
+        color: #e82e7a;
+    }
+    input[type="submit"]{
+        border: none;
+        outline: none;
+        padding: 11px 25px;
+        background:#e82e7a;
+        cursor: pointer;
+        width: 100px;
+        margin-top: 10px;
+        font-weight: 600;
+        border-radius: 4px;
+        
+    }
+    input[type="submit"]:active{
+        opacity: 0.8;
+    }
+   
+    
+</style>
+
+<body>
+  <div id="box">
+   <form>
+      <h2>Sing in</h2>
+       <div class="inputbox">
+       <input type="text" required="required">
+           <span>Username:</span>
+           <i></i>
+       </div>
+       <div class="inputbox">
+       <input type="password" required="required">
+         <span>Password:</span>
+           <i></i>
+       </div>
+       <div class="link">
+       <a href="#">Forgot Password?</a>
+        <a href="#">Singup</a>   
+       </div>
+       <input type="submit" value="Login">
+      </form> 
+    </div>  
+
+</body>
+</html>
+
+
